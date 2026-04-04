@@ -32,9 +32,9 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
   }
 
-  .quiz-screen img{
-    width: 300px;
-    height:300px;
+  .quiz-screen img {
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     border-radius: 15px;
   }
@@ -66,4 +66,36 @@ body {
   
   .hidden {
     display: none;
+  }
+
+  .result-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .result-text {
+    flex: 1;
+  }
+  
+  #restart-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 20px 40px;
+    font-size: 22px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background: #ffffff;
+    transition: 0.2s;
+  }
+
+  .restart-text button {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+  
+  #restart-btn:hover {
+    background: #d6bba8;
+    transform: scale(1.05);
   }

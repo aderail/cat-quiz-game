@@ -144,27 +144,43 @@ function showResult() {
 
   let resultText = "";
   let resultImage = "";
+  let resultDescription = "";
 
   if (resultType === "option1") {
-    resultText = "Arya: blah blah";
+    resultText = "Arya:";
     resultImage = "pictures/arya.jpg";
+    resultDescription = "";
   }
   if (resultType === "option2") {
-    resultText = "Strider: blah blah";
+    resultText = "Strider:";
     resultImage = "pictures/strider.jpg";
+    resultDescription = "";
   }
   if (resultType === "option3") {
-    resultText = "Mayor: blah blah";
+    resultText = "Mayor:";
     resultImage = "pictures/mayor.jpg";
+    resultDescription = "";
   }
   if (resultType === "option4") {
-    resultText = "Athena: You're no cat!";
+    resultText = "Athena:";
     resultImage = "pictures/athena.jpg";
+    resultDescription = "You're no cat!";
   }
 
   container.innerHTML = `
-    <h1>Your Result</h1>
-    <p>${resultText}</p>
-    <img src="${resultImage}" alt="result image" style="width:300px; height: 400px; border-radius:15px; margin:20px 0;">
-  `;
+  <div class="result-wrapper">
+    <img src="${resultImage}" alt="result image" class="result-image">
+    <div class="result-text">
+      <h2>${resultText}</h2>
+      <p>${resultDescription}</p>
+      <button id="restart-btn">Replay Quiz</button>
+    </div>
+  </div>
+`;
+
+  document.getElementById("restart-btn").onclick = () => {
+    scores = { option1: 0, option2: 0, option3: 0, option4: 0 };
+    currentQuestion = 0;
+    showQuestion();
+  }
 }
