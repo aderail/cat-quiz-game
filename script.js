@@ -112,7 +112,7 @@ function startQuiz() {
 
 function showQuestion() {
   const container = document.getElementById("quiz-container");
-  container.innerHTML = ""; // clear previous question
+  container.innerHTML = "";
 
   if (currentQuestion >= questions.length) {
     showResult();
