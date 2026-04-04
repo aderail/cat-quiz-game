@@ -143,9 +143,9 @@ function showResult() {
   let resultType = Object.keys(scores).find(key => scores[key] === maxScore);
 
   let resultText = "";
-  if (resultType === "option1") resultText = "Arya: Morning pizza lover!"; //Arya
-  if (resultType === "option2") resultText = "Strider: Balanced fruit fan!"; //Strider
-  if (resultType === "option3") resultText = "Mayor: Nighttime candy chaos!"; //Mayor
+  if (resultType === "option1") resultText = "Arya: blah blah"; //Arya
+  if (resultType === "option2") resultText = "Strider: blah blah"; //Strider
+  if (resultType === "option3") resultText = "Mayor: blah blah"; //Mayor
   if (resultType === "option4") resultText = "Athena: You're no cat!"; //Athena
 
   document.getElementById("result").textContent = `Your result: ${resultText}`;
