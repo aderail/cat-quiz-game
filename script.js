@@ -137,16 +137,34 @@ function showQuestion() {
 }
 
 function showResult() {
-  document.getElementById("quiz-container").style.display = "none";
+  const container = document.getElementById("quiz-container");
 
   let maxScore = Math.max(...Object.values(scores));
   let resultType = Object.keys(scores).find(key => scores[key] === maxScore);
 
   let resultText = "";
-  if (resultType === "option1") resultText = "Arya: blah blah"; //Arya
-  if (resultType === "option2") resultText = "Strider: blah blah"; //Strider
-  if (resultType === "option3") resultText = "Mayor: blah blah"; //Mayor
-  if (resultType === "option4") resultText = "Athena: You're no cat!"; //Athena
+  let resultImage = "";
 
-  document.getElementById("result").textContent = `Your result: ${resultText}`;
+  if (resultType === "option1") {
+    resultText = "Arya: blah blah";
+    resultImage = "pictures/arya.jpg";
+  }
+  if (resultType === "option2") {
+    resultText = "Strider: blah blah";
+    resultImage = "pictures/strider.jpg";
+  }
+  if (resultType === "option3") {
+    resultText = "Mayor: blah blah";
+    resultImage = "pictures/mayor.jpg";
+  }
+  if (resultType === "option4") {
+    resultText = "Athena: You're no cat!";
+    resultImage = "pictures/athena.jpg";
+  }
+
+  container.innerHTML = `
+    <h1>Your Result</h1>
+    <p>${resultText}</p>
+    <img src="${resultImage}" alt="result image" style="width:300px; height: 400px; border-radius:15px; margin:20px 0;">
+  `;
 }
