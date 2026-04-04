@@ -51,52 +51,52 @@ const questions = [
   },
   //question 6
   {
-    text: "question 6.",
+    text: "Have you ever been in a fight?",
     answers: [
-      { text: "Aw, man", type: "option1" },
-      { text: "I'll find something else to eat", type: "option2" },
-      { text: "The world is a dark and cruel place", type: "option3" },
-      { text: "NOM NOM NOM NOM", type: "option4"}
+      { text: "Plenty", type: "option2" }, //Strider
+      { text: "Do verbal ones count?", type: "option1" }, //Arya
+      { text: "No, but I could win one", type: "option4" }, //Athena
+      { text: "I'd just walk away", type: "option3"} //Mayor
     ]
   },
   //question 7
   {
-    text: "question 7.",
+    text: "How long would it take someone to notice you're missing?",
     answers: [
-      { text: "Aw, man", type: "option1" },
-      { text: "I'll find something else to eat", type: "option2" },
-      { text: "The world is a dark and cruel place", type: "option3" },
-      { text: "NOM NOM NOM NOM", type: "option4"}
+      { text: "Hours", type: "option4" }, //Athena
+      { text: "A day or two", type: "option2" }, //Strider
+      { text: "Hopefully within a couple weeks", type: "option1" }, //Arya
+      { text: "A while...", type: "option3"} //Mayor
     ]
   },
   //question 8
   {
-    text: "question 8.",
+    text: "What does a day to yourself sound like?",
     answers: [
-      { text: "Aw, man", type: "option1" },
-      { text: "I'll find something else to eat", type: "option2" },
-      { text: "The world is a dark and cruel place", type: "option3" },
-      { text: "NOM NOM NOM NOM", type: "option4"}
+      { text: "Catching up on some hobbies at home", type: "option3" }, //Mayor
+      { text: "Let's go party!", type: "option4" }, //Athena
+      { text: "Spending time in nature", type: "option2" }, //Strider
+      { text: "Staying up until 4am playing video games", type: "option1"} //Arya
     ]
   },
   //question 9
   {
-    text: "question 9.",
+    text: "You're going to die.",
     answers: [
-      { text: "Aw, man", type: "option1" },
-      { text: "I'll find something else to eat", type: "option2" },
-      { text: "The world is a dark and cruel place", type: "option3" },
-      { text: "NOM NOM NOM NOM", type: "option4"}
+      { text: "I'm already dead, baby!", type: "option3" }, //Mayor
+      { text: "Thanks for the existential crisis", type: "option4" }, //Athena
+      { text: "And I'll live my life to the fullest!", type: "option2" }, //Strider
+      { text: "AAAAAHHHHHHH", type: "option1"} //Arya
     ]
   },
   //question 10
   {
-    text: "question 10.",
+    text: "Do you like your coffee hot or ice?",
     answers: [
-      { text: "Aw, man", type: "option1" },
-      { text: "I'll find something else to eat", type: "option2" },
-      { text: "The world is a dark and cruel place", type: "option3" },
-      { text: "NOM NOM NOM NOM", type: "option4"}
+      { text: "Hot! Hot! Hot!", type: "option2" }, //Strider
+      { text: "Cold like my soul", type: "option3" }, //Mayor
+      { text: "I'm not big on coffee", type: "option1" }, //Arya
+      { text: "A frappacino!", type: "option4"} //Athena
     ]
   }
 ];
