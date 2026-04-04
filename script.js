@@ -23,8 +23,8 @@ const questions = [
   {
     text: "How many days could you go without a shower?",
     answers: [
-      { text: "0. I have to shower every day", type: "option1" }, //Arya
       { text: "I've definitely missed a day or two", type: "option2" }, //Strider
+      { text: "0. I have to shower every day", type: "option1" }, //Arya
       { text: "Sometimes the depressy hits, ok?", type: "option3" }, //Mayor
       { text: "That's what deoderant is for!", type: "option4"} //Athena
     ]
@@ -41,12 +41,12 @@ const questions = [
   },
   //question 5
   {
-    text: "question 5.",
+    text: "Your friend just broke your fancy china. How would you react?",
     answers: [
-      { text: "Aw, man", type: "option1" },
-      { text: "I'll find something else to eat", type: "option2" },
-      { text: "The world is a dark and cruel place", type: "option3" },
-      { text: "NOM NOM NOM NOM", type: "option4"}
+      { text: "Why would they do that?", type: "option1" }, //Arya
+      { text: "They're no longer my friend", type: "option2" }, //Strider
+      { text: "Let's break the rest of the china!", type: "option4" }, //Athena
+      { text: "Things happen, oh well", type: "option3"} //Mayor
     ]
   },
   //question 6
@@ -146,7 +146,7 @@ function showResult() {
   if (resultType === "option1") resultText = "Arya: Morning pizza lover!"; //Arya
   if (resultType === "option2") resultText = "Strider: Balanced fruit fan!"; //Strider
   if (resultType === "option3") resultText = "Mayor: Nighttime candy chaos!"; //Mayor
-  if (resultType === "option4") resultText = "Athena: Nighttime candy chaos!"; //Athena
+  if (resultType === "option4") resultText = "Athena: You're no cat!"; //Athena
 
   document.getElementById("result").textContent = `Your result: ${resultText}`;
 }
