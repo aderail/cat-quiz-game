@@ -90,12 +90,12 @@ button:hover {
 }
 
 .result-wrapper {
-  /*display: flex;
-  height: 100vh;
+  display: flex;
+  height: 65vh;
   padding: 20px;
   box-sizing: border-box;
   gap: 50px;
-  position: relative; */
+  position: relative;
 }
   
 .result-text {
