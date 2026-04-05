@@ -95,8 +95,8 @@ const questions = [
     text: "You're going to die.",
     answers: [
       { text: "I'm already dead, baby!", type: "option3" }, //Mayor
-      { text: "Thanks for the existential crisis", type: "option4" }, //Athena
-      { text: "And I'll live my life to the fullest!", type: "option2" }, //Strider
+      { text: "Thanks for the existential crisis", type: "option2" }, //Strider
+      { text: "And I'll live my life to the fullest!", type: "option4" }, //Athena
       { text: "AAAAAHHHHHHH", type: "option1"} //Arya
     ]
   },
@@ -164,22 +164,22 @@ function showResult() {
   if (resultType === "option1") {
     resultText = "Arya:";
     resultImage = "pictures/arya.jpg";
-    resultDescription = "";
+    resultDescription = "Scaredy cat much? You prefer the slow life - grab a snack, boot up your PC, and you're in for the night. Sure, people might think you're introverted and shy. But you're known to speak words of wisdom if prompted... okay, sometimes they're long tangents about your favorite hobbies.";
   }
   if (resultType === "option2") {
     resultText = "Strider:";
     resultImage = "pictures/strider.jpg";
-    resultDescription = "";
+    resultDescription = "Note to self: stay on your good side. You'll defend yourself and your friends fiercly. Your drive to achieve your goals outweighs any fear life might bring you. That's not to say you're completely crazy - sun bathing or feeling the breeze on your whiskers can be quite nice.";
   }
   if (resultType === "option3") {
     resultText = "Mayor:";
     resultImage = "pictures/mayor.jpg";
-    resultDescription = "";
+    resultDescription = "(RIP to my baby boy <3) Wise beyond your years, or have you just realized holding grudges isn't worth anything? Not a lot of things phase you, including dark humor. Whether life is total chaos or soft like your fur, you're just happy to be with those you love.";
   }
   if (resultType === "option4") {
     resultText = "Athena:";
     resultImage = "pictures/athena.jpg";
-    resultDescription = "You're no cat!";
+    resultDescription = "You're no cat! How you're still alive, the world may never know. But you're the life of the party (or maybe slightly attention seeking). You'll make lemons out of lemonade, chocolate out of poop. Your poop, specifically. Hygiene isn't high on your list of priorities, is it?";
   }
 
   container.innerHTML = `
