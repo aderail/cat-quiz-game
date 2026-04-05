@@ -82,6 +82,16 @@ const questions = [
   },
   //question 9
   {
+    text: "Do you like your coffee hot or ice?",
+    answers: [
+      { text: "Hot! Hot! Hot!", type: "option2" }, //Strider
+      { text: "Cold like my soul", type: "option3" }, //Mayor
+      { text: "I'm not big on coffee", type: "option1" }, //Arya
+      { text: "A frappacino!", type: "option4"} //Athena
+    ]
+  },
+  //question 10
+  {
     text: "You're going to die.",
     answers: [
       { text: "I'm already dead, baby!", type: "option3" }, //Mayor
@@ -90,16 +100,7 @@ const questions = [
       { text: "AAAAAHHHHHHH", type: "option1"} //Arya
     ]
   },
-  //question 10
-  {
-    text: "Do you like your coffee hot or ice?",
-    answers: [
-      { text: "Hot! Hot! Hot!", type: "option2" }, //Strider
-      { text: "Cold like my soul", type: "option3" }, //Mayor
-      { text: "I'm not big on coffee", type: "option1" }, //Arya
-      { text: "A frappacino!", type: "option4"} //Athena
-    ]
-  }
+  
 ];
 
 let scores = { option1: 0, option2: 0, option3: 0, option4: 0 };
@@ -133,7 +134,7 @@ function showQuestion() {
     questionElem.classList.add("shake-light"); // Question 7
   }
 
-  if (currentQuestion === 8) {
+  if (currentQuestion === 9) {
     questionElem.classList.add("shake-strong"); // Question 9
   }
   container.appendChild(questionElem);
