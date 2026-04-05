@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: OCR A Std, monospace;
     background: #dde0c1;
     color: black;
     display: flex;
@@ -45,9 +45,9 @@ body {
 }
 
 #quiz-container h2 {
-  font-size: 20px;  /* change to whatever size you like */
-  margin-bottom: 20px; /* optional spacing below question */
-  font-weight: bold;   /* optional */
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
   margin-bottom: 100px;
 }
 
@@ -60,6 +60,7 @@ body {
 }
   
 button {
+  font-family: OCR A Std, monospace;
   display: block;
   width: 100%;
   margin: 10px 0;
