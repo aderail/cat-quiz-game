@@ -34,7 +34,7 @@ const questions = [
     text: "Don't freak out, but there's something behind you...",
     answers: [
       { text: "OH MY GOD WHAT", type: "option1" }, //Arya
-      { text: "Very funny.", type: "option3" }, //Mayor
+      { text: "Very funny", type: "option3" }, //Mayor
       { text: "I dare somebody to TRY to harm me", type: "option2" }, //Strider
       { text: "Ooh, new friend!", type: "option4"} //Athena
     ]
@@ -138,6 +138,10 @@ function showQuestion() {
   // Shake text
   questionElem.classList.remove("shake-light", "shake-strong");
   void questionElem.offsetWidth;
+
+  if (currentQuestion === 3) {
+    questionElem.classList.add("shake-light");
+  }
 
   if (currentQuestion === 6) {
     questionElem.classList.add("shake-light");

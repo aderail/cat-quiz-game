@@ -181,10 +181,10 @@ button:hover {
 
 #progress-cat {
   position: absolute;
-  top: -25px;
+  top: -125px;
   left: 0%;
-  width: 50px;
-  transform: translateX;
+  width: 200px;
+  transform: translateX(-100px);
   transition: left 0.4s ease;
   pointer-events: none;
 }
