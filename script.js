@@ -106,13 +106,39 @@ const questions = [
 let scores = { option1: 0, option2: 0, option3: 0, option4: 0 };
 let currentQuestion = 0;
 
+const music = document.getElementById("bgMusic");
+
 function startQuiz() {
+  music.volume = 0;
+  music.play();
+
+  fadeInAudio(music, 4000);
+
   document.getElementById("start").style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
   document.getElementById("progress-container").style.display = "block";
 
   showQuestion();
   updateProgressBar();
+}
+
+function fadeInAudio(audio, duration) {
+  let volume = 0;
+  const step = 0.05;
+  const intervalTime = duration / (1 / step);
+
+  audio.volume = 0;
+
+  const fade = setInterval(() => {
+    volume += step;
+
+    if (volume >= 1) {
+      audio.volume = 1;
+      clearInterval(fade);
+    } else {
+      audio.volume = volume;
+    }
+  }, intervalTime);
 }
 
 function updateProgressBar() {
@@ -153,6 +179,18 @@ function showQuestion() {
 
   container.appendChild(questionElem);
 
+  const pauseQuestions = [3, 6, 9];
+
+if (pauseQuestions.includes(currentQuestion)) {
+  music.pause();
+} else {
+  if (music.paused) {
+    music.currentTime = music.currentTime;
+    music.play();
+    fadeInAudio(music, 4000);
+  }
+}
+
   q.answers.forEach(answer => {
     const btn = document.createElement("button");
     btn.textContent = answer.text;
@@ -162,7 +200,6 @@ function showQuestion() {
 
       const isLastQuestion = currentQuestion === questions.length - 1;
 
-      // Move progress bar and image last question
       if (isLastQuestion) {
         document.getElementById("progress-bar").style.width = "100%";
         document.getElementById("progress-cat").style.left = "100%";
@@ -184,6 +221,9 @@ function showQuestion() {
 }
 
 function showResult() {
+  music.play();
+  fadeInAudio(music, 4000);
+
   const container = document.getElementById("quiz-container");
   document.getElementById("progress-container").style.display = "none";
 
