@@ -118,6 +118,7 @@ function startQuiz() {
 function updateProgressBar() {
   const progress = ((currentQuestion) / questions.length) * 100;
   document.getElementById("progress-bar").style.width = progress + "%";
+  document.getElementById("progress-cat").style.left = progress + "%";
 }
 
 function showQuestion() {
@@ -134,7 +135,7 @@ function showQuestion() {
   const questionElem = document.createElement("h2");
   questionElem.textContent = q.text;
 
-  // reset animation
+  // Shake text
   questionElem.classList.remove("shake-light", "shake-strong");
   void questionElem.offsetWidth;
 
@@ -157,8 +158,10 @@ function showQuestion() {
 
       const isLastQuestion = currentQuestion === questions.length - 1;
 
+      // Move progress bar and image last question
       if (isLastQuestion) {
         document.getElementById("progress-bar").style.width = "100%";
+        document.getElementById("progress-cat").style.left = "100%";
 
         setTimeout(() => {
           showResult();
