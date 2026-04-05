@@ -111,12 +111,12 @@ function startQuiz() {
   document.getElementById("quiz-container").style.display = "block";
   document.getElementById("progress-container").style.display = "block";
 
-  updateProgressBar();
   showQuestion();
+  updateProgressBar();
 }
 
 function updateProgressBar() {
-  const progress = (currentQuestion / questions.length) * 100;
+  const progress = ((currentQuestion) / questions.length) * 100;
   document.getElementById("progress-bar").style.width = progress + "%";
 }
 
@@ -130,33 +130,48 @@ function showQuestion() {
   }
 
   const q = questions[currentQuestion];
+
   const questionElem = document.createElement("h2");
   questionElem.textContent = q.text;
 
-  // reset animation (important so it can re-trigger)
+  // reset animation
   questionElem.classList.remove("shake-light", "shake-strong");
   void questionElem.offsetWidth;
 
-  // 🎯 SHAKE RULES HERE
   if (currentQuestion === 6) {
-    questionElem.classList.add("shake-light"); // Question 7
+    questionElem.classList.add("shake-light");
   }
 
   if (currentQuestion === 9) {
-    questionElem.classList.add("shake-strong"); // Question 9
+    questionElem.classList.add("shake-strong");
   }
+
   container.appendChild(questionElem);
 
   q.answers.forEach(answer => {
     const btn = document.createElement("button");
     btn.textContent = answer.text;
+
     btn.onclick = () => {
       scores[answer.type]++;
-      currentQuestion++;
 
+      const isLastQuestion = currentQuestion === questions.length - 1;
+
+      if (isLastQuestion) {
+        document.getElementById("progress-bar").style.width = "100%";
+
+        setTimeout(() => {
+          showResult();
+        }, 300);
+
+        return;
+      }
+
+      currentQuestion++;
       updateProgressBar();
       showQuestion();
     };
+
     container.appendChild(btn);
   });
 }
@@ -208,8 +223,8 @@ function showResult() {
     scores = { option1: 0, option2: 0, option3: 0, option4: 0 };
     currentQuestion = 0;
 
+    showQuestion();
     updateProgressBar();
     document.getElementById("progress-container").style.display = "block";
-    showQuestion();
   }
 }

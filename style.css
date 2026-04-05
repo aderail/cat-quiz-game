@@ -160,7 +160,16 @@ button:hover {
 }
 
 #progress-container {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 10px;
+  background: #ccc;
+  border-radius: 5px;
   display: none;
+  z-index: 999;
 }
 
 #progress-bar {
