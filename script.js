@@ -109,7 +109,15 @@ let currentQuestion = 0;
 function startQuiz() {
   document.getElementById("start").style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
+  document.getElementById("progress-container").style.display = "block";
+
+  updateProgressBar();
   showQuestion();
+}
+
+function updateProgressBar() {
+  const progress = (currentQuestion / questions.length) * 100;
+  document.getElementById("progress-bar").style.width = progress + "%";
 }
 
 function showQuestion() {
@@ -145,6 +153,8 @@ function showQuestion() {
     btn.onclick = () => {
       scores[answer.type]++;
       currentQuestion++;
+
+      updateProgressBar();
       showQuestion();
     };
     container.appendChild(btn);
@@ -153,6 +163,7 @@ function showQuestion() {
 
 function showResult() {
   const container = document.getElementById("quiz-container");
+  document.getElementById("progress-container").style.display = "none";
 
   let maxScore = Math.max(...Object.values(scores));
   let resultType = Object.keys(scores).find(key => scores[key] === maxScore);
@@ -196,6 +207,9 @@ function showResult() {
   document.getElementById("restart-btn").onclick = () => {
     scores = { option1: 0, option2: 0, option3: 0, option4: 0 };
     currentQuestion = 0;
+
+    updateProgressBar();
+    document.getElementById("progress-container").style.display = "block";
     showQuestion();
   }
 }

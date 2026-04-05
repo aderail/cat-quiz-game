@@ -102,9 +102,15 @@ button:hover {
 .result-text {
   font-size: 22px;
   flex: 1;
+  margin-top: -20px;
+}
+
+.result-text h2 {
+  font-size:34px !important;
 }
   
 #restart-btn {
+  font-weight: bold;
   display: block;
   margin: 20px auto 0;
   padding: 20px 40px;
@@ -151,4 +157,15 @@ button:hover {
 .shake-strong {
   display: inline-block;
   animation: shakeStrong 0.4s infinite;
+}
+
+#progress-container {
+  display: none;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.3s ease;
 }
