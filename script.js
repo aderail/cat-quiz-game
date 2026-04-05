@@ -68,6 +68,7 @@ const questions = [
       { text: "Hopefully within a couple weeks", type: "option1" }, //Arya
       { text: "A while...", type: "option3"} //Mayor
     ]
+    
   },
   //question 8
   {
@@ -122,6 +123,19 @@ function showQuestion() {
   const q = questions[currentQuestion];
   const questionElem = document.createElement("h2");
   questionElem.textContent = q.text;
+
+  // reset animation (important so it can re-trigger)
+  questionElem.classList.remove("shake-light", "shake-strong");
+  void questionElem.offsetWidth;
+
+  // 🎯 SHAKE RULES HERE
+  if (currentQuestion === 6) {
+    questionElem.classList.add("shake-light"); // Question 7
+  }
+
+  if (currentQuestion === 8) {
+    questionElem.classList.add("shake-strong"); // Question 9
+  }
   container.appendChild(questionElem);
 
   q.answers.forEach(answer => {
