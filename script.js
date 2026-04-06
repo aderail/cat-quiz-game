@@ -225,6 +225,7 @@ if (pauseQuestions.includes(currentQuestion)) {
 }
 
 function showResult() {
+  heartbeat.pause();
   music.play();
   fadeInAudio(music, 4000);
 
