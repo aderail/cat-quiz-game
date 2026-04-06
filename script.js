@@ -179,13 +179,17 @@ function showQuestion() {
 
   container.appendChild(questionElem);
 
+  const heartbeat = document.getElementById("heartbeat");
   const pauseQuestions = [3, 6, 9];
 
 if (pauseQuestions.includes(currentQuestion)) {
   music.pause();
+  heartbeat.play();
 } else {
+  heartbeat.pause();
+  heartbeat.currentTime = 0;
+
   if (music.paused) {
-    music.currentTime = music.currentTime;
     music.play();
     fadeInAudio(music, 4000);
   }
